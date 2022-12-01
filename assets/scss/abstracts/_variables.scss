@@ -1,0 +1,38 @@
+$base-color: #fec7d7;
+$headline-color: #0e172c;
+$text-color: #0e172c;
+$background-button: #0e172c;
+$text-button: #fffffe;
+
+
+$font-family-regular: Roboto-regular;
+$font-family-bold: Roboto-Bold;
+$font-family-light: Roboto-Light;
+$font-family-medium: Roboto-Medium;
+$font-family-thin: Roboto-Thin;
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../font/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url("../font/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url("../font/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url("../font/Roboto-Medium.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url("../font/Roboto-Thin.ttf");
+}
+

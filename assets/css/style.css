@@ -4,10 +4,48 @@
     Copyrigh (c) 2022 Alex Gioffre'
     Email: alex.gioffre_dev@outlook.it
     Licensed under the MIT License: http://opensource.org/licenses/MIT
-    File: _all.scss
 */
+@font-face {
+  font-family: Roboto-Regular;
+  src: url("../font/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: Roboto-Bold;
+  src: url("../font/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: Roboto-Light;
+  src: url("../font/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: Roboto-Medium;
+  src: url("../font/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: Roboto-Thin;
+  src: url("../font/Roboto-Thin.ttf");
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
-  background-color: whitesmoke;
+  font-weight: 400;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: Roboto-regular;
+}
+
+.header {
+  background-color: #fec7d7;
+  width: 100vw;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
