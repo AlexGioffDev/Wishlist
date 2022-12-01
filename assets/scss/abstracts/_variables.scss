@@ -3,13 +3,21 @@ $headline-color: #0e172c;
 $text-color: #0e172c;
 $background-button: #0e172c;
 $text-button: #fffffe;
+$background-button-secondary : #d9d4e7;
 
+
+$sm-device-min-width: 640px;
+$md-device-min-width: 768px;
+$lg-device-min-width: 1024px;
+$xlg-device-min-width: 1280px;
+$xlg-2-device-min-width: 1536px;
 
 $font-family-regular: Roboto-regular;
 $font-family-bold: Roboto-Bold;
 $font-family-light: Roboto-Light;
 $font-family-medium: Roboto-Medium;
 $font-family-thin: Roboto-Thin;
+
 
 @font-face {
     font-family: Roboto-Regular;
