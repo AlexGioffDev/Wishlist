@@ -1,0 +1,15 @@
+@mixin from-left($name, $left) {
+    @keyframes #{$name} {
+        0%{
+            left: -200rem;
+        }
+
+        75% {
+            left: $left + 10px
+        }
+
+        100%{
+            left: $left
+        }
+    }
+}

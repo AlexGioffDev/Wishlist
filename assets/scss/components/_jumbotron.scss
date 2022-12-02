@@ -3,12 +3,12 @@
     max-width: 800px;
     height: 55%;
     transform: translate(6%, 35%);
-    background-image: url('../images/hero-image.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:  50% 50%;
+
     position: relative;
     text-align: justify;
+    animation: bg-opacity 1.5s ease-in 0.2s 1 forwards;
 
     &-headline {
         color: $headline-color;
@@ -18,6 +18,9 @@
         position: absolute;
         top: 7.3rem;
         letter-spacing: -1px;
+        opacity: 0;
+        animation: leftToZero 2s ease-in 0.5s 1 forwards, fade-out 2s ease-in 0.5s 1 forwards;
+
     }
 
     &-subtitle {
@@ -28,6 +31,10 @@
         font-size: 1.4rem;
         text-transform: uppercase;
         color: $text-color;
+        opacity: 0;
+        animation: leftToFive 1.5s ease-in 1.4s 1 forwards, fade-out 1.5s ease-in 1.4s 1 forwards;;
+
+
     }
 
     &-btn {
@@ -39,5 +46,39 @@
         font-family: $font-family-bold;
         font-size: 1.3rem;
         letter-spacing: 0px;
+        opacity: 0;
+        animation: leftToTen 1.5s ease-in 2.2s 1 forwards, fade-out 1.5s ease-in 2.2s 1 forwards;;
+
     }
 }
+
+
+@keyframes fade-out {
+    0% {
+        opacity: 0;
+    };
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bg-opacity {
+    0% {
+        background: transparent
+    }
+
+    75% {
+        background-position:  60% 50%;
+
+    }
+
+    100% {
+        background-position:  50% 50%;
+        background-image: url('../images/hero-image.png')
+    }
+}
+
+@include from-left(leftToZero,0);
+@include from-left(leftToFive,5px);
+@include from-left(leftToTen, 10px);
