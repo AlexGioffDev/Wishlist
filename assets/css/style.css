@@ -65,14 +65,20 @@ body {
 
 .jumbotron {
   width: 100%;
-  max-width: 800px;
   height: 55%;
-  transform: translate(6%, 35%);
+  margin-top: 10vh;
+  margin-left: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   text-align: justify;
   animation: bg-opacity 1.5s ease-in 0.2s 1 forwards;
+  background-image: url("../images/hero-image.png");
+}
+@media screen and (min-width: 425px) and (max-width: 767px) {
+  .jumbotron {
+    animation: bg-fade-425 1.5s ease-in 0.2s 1 forwards;
+  }
 }
 .jumbotron-headline {
   color: #0e172c;
@@ -80,6 +86,7 @@ body {
   font-family: Roboto-Bold;
   font-size: 4rem;
   position: absolute;
+  left: 0;
   top: 7.3rem;
   letter-spacing: -1px;
   opacity: 0;
@@ -108,6 +115,79 @@ body {
   opacity: 0;
   animation: leftToTen 1.5s ease-in 2.2s 1 forwards, fade-out 1.5s ease-in 2.2s 1 forwards;
 }
+@media screen and (max-width: 320px) {
+  .jumbotron-headline {
+    font-size: 2.5rem;
+  }
+  .jumbotron-subtitle {
+    top: 10rem;
+    margin-left: -2px;
+    font-size: 1rem;
+  }
+  .jumbotron-btn {
+    top: 12rem;
+    font-size: 1rem;
+    margin-left: -8px;
+  }
+}
+@media screen and (width: 360px) {
+  .jumbotron-btn {
+    top: 13.7rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    margin-left: 25px;
+    height: 75vh;
+  }
+  .jumbotron-headline, .jumbotron-subtitle, .jumbotron-btn {
+    margin-left: 14%;
+  }
+  .jumbotron-headline {
+    font-size: 4.5rem;
+  }
+  .jumbotron-subtitle {
+    top: 12rem;
+    font-size: 2rem;
+  }
+  .jumbotron-btn {
+    top: 15rem;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .jumbotron {
+    margin-left: 30px;
+  }
+  .jumbotron-headline {
+    font-size: 9.5rem;
+  }
+  .jumbotron-subtitle {
+    top: 16.2rem;
+    margin-left: 14.4%;
+    font-size: 3rem;
+  }
+  .jumbotron-btn {
+    top: 21rem;
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .jumbotron-headline {
+    font-size: 14rem;
+  }
+  .jumbotron-subtitle {
+    top: 21.2rem;
+    margin-left: 14.4%;
+    font-size: 5rem;
+  }
+  .jumbotron-btn {
+    padding: 2rem;
+    top: 29rem;
+    font-size: 5rem;
+  }
+}
 
 @keyframes fade-out {
   0% {
@@ -126,7 +206,17 @@ body {
   }
   100% {
     background-position: 50% 50%;
-    background-image: url("../images/hero-image.png");
+  }
+}
+@keyframes bg-fade-425 {
+  0% {
+    background: transparent;
+  }
+  75% {
+    background-position: 60% 50%;
+  }
+  100% {
+    background-position: 40% 50%;
   }
 }
 @keyframes leftToZero {
