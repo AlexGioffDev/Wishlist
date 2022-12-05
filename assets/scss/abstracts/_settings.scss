@@ -8,11 +8,11 @@
 
 html {
     font-size: 62.5%;
+    overflow:hidden;
 }
 
 body {
     font-weight: 400;
-    overflow-x: hidden;
     font-family: $font-family-regular;
     width: 100vw;
     height: 100vh;
