@@ -175,15 +175,17 @@ body {
 @media screen and (min-width: 1440px) {
   .jumbotron-headline {
     font-size: 9.5rem;
+    margin-left: 10%;
   }
   .jumbotron-subtitle {
     top: 16.2rem;
-    margin-left: 14.4%;
+    margin-left: 10.5%;
     font-size: 3rem;
   }
   .jumbotron-btn {
     top: 21rem;
     font-size: 3rem;
+    margin-left: 10%;
   }
 }
 @media screen and (min-width: 2560px) {
