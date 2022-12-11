@@ -35,15 +35,21 @@
 
 html {
   font-size: 62.5%;
+  overflow: hidden;
 }
 
 body {
   font-weight: 400;
-  overflow-x: hidden;
   font-family: Roboto-regular;
+  background-color: #fec7d7;
+}
+
+.container {
   width: 100vw;
   height: 100vh;
-  background-color: #fec7d7;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
 }
 
 .header {
@@ -64,10 +70,8 @@ body {
 }
 
 .jumbotron {
-  width: 100%;
-  height: 55%;
-  margin-top: 10vh;
-  margin-left: 20px;
+  grid-column: 1/-1;
+  grid-row: 3/10;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -136,10 +140,17 @@ body {
     font-size: 1rem;
   }
 }
+@media screen and (min-width: 375px) {
+  .jumbotron-headline {
+    margin-left: 2px;
+  }
+  .jumbotron-btn {
+    margin-left: -2px;
+  }
+}
 @media screen and (min-width: 768px) {
   .jumbotron {
-    margin-left: 25px;
-    height: 75vh;
+    grid-column: 2/12;
   }
   .jumbotron-headline, .jumbotron-subtitle, .jumbotron-btn {
     margin-left: 14%;
@@ -156,10 +167,12 @@ body {
     font-size: 2rem;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .jumbotron {
-    margin-left: 30px;
+    grid-row: 2/12;
   }
+}
+@media screen and (min-width: 1440px) {
   .jumbotron-headline {
     font-size: 9.5rem;
   }
