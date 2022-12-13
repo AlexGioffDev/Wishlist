@@ -44,6 +44,10 @@ body {
   background-color: #fec7d7;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
