@@ -35,7 +35,7 @@
 
 html {
   font-size: 62.5%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -270,6 +270,72 @@ a {
   100% {
     left: 10px;
   }
+}
+.title-container {
+  grid-row: 1/1;
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-text {
+  font-size: 3rem;
+  font-family: Roboto-Thin;
+  text-transform: uppercase;
+  color: #0e172c;
+  letter-spacing: 1rem;
+}
+
+.cards-container {
+  grid-row: 3/10;
+  grid-column: 1/-1;
+  display: grid;
+  padding: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+.cards-container .card {
+  border-radius: 4px;
+  box-shadow: 5px 3px 8px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  background-color: #d9d4e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.cards-container .card-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.cards-container .card-title {
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Roboto-Bold;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.cards-container .card-price {
+  align-self: flex-end;
+  margin-right: 3px;
+  font-family: Roboto-Light;
+  font-size: 1rem;
+}
+.cards-container .card-price .price {
+  text-decoration: underline;
+}
+.cards-container .card-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  background-color: #0e172c;
+  padding: 0.4rem;
+  margin: 4px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 45%;
+  align-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
