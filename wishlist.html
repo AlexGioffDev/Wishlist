@@ -13,111 +13,50 @@
     <!-- Container: START -->
     <div class="container">
 
-       <div class="title-container">
+        <div class="title-container">
             <h1 class="title-text">Your Wishlist</h1>
-       </div>
-       <div class="cards-container">
-        <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
         </div>
-         <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
+
+        <div class="cards-container" id="cards">
+            <!-- <div class="card">
+                <div class="card-image-container">
+                    <img class="card-image" src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg" />
+                </div>
+                <div class="card-info">
+                    <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
+                    <h2 class="card-price">Price <span class="price">19.99</span></h2>
+                    <a class="card-link" target="_blank"
+                        href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
+                        Link
+                    </a>
+                </div>
+            </div> -->
+
         </div>
-         <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
+        <div class="form">
+            <p id="error" class="errorMessage"></p>
+            <div class="form-group">
+                <label for="imageProduct">Image Link:</label>
+                <input type="text" placeholder="Image" id="imageProduct" required minlength="5"/>
+            </div>
+            <div class="form-group">
+                <label for="titleProduct">Name:</label>
+                <input type="text" placeholder="Name Product" id="titleProduct" required minlength="5"/>
+            </div>
+            <div class="form-group">
+                <label for="priceProduct">Price:</label>
+                <input id="priceProduct" type="number" step="0.1" placeholder="15.99" required min="1.0" />
+            </div>
+            <div class="form-group">
+                <label for="linkProduct">Link Product:</label>
+                <input type="text" placeholder="Link" id="linkProduct" required minlength="5" />
+            </div>
+            <button id="buttonWish"   onclick="generateWish()">Add Element</button>
         </div>
-         <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
-        </div>
-         <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
-        </div>
-         <div class="card">
-            <img 
-                class="card-image"
-                src="https://m.media-amazon.com/images/I/31nYBQbpw5L._AC_.jpg"
-                width="100px"
-                height="100px"
-            />
-            <h2 class="card-title">Popsplanet Funko Pop! Marvel - The Eternals -</h2>
-            <h2 class="card-price">Price <span class="price">19.99</span></h2>
-            <a 
-                class="card-link"
-                target="_blank"
-                href="https://www.amazon.it/Popsplanet-Funko-Pop-Marvel-Eternals/dp/B09NJDLVS7/ref=sr_1_1_sspa?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=29EPUM2KLA3EP&keywords=funk+pop&qid=1671210058&sprefix=funk+po%2Caps%2C132&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&smid=A31QKM7ZJPGQFR">
-                Link
-            </a>
-        </div>
-       </div>
     </div>
     <!-- Container: END -->
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/wishlist.js"></script>
 </body>
 
 </html>

@@ -289,10 +289,13 @@ a {
 .cards-container {
   grid-row: 3/10;
   grid-column: 1/-1;
-  display: grid;
-  padding: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 10px;
+  overflow: auto;
 }
 .cards-container .card {
   border-radius: 4px;
@@ -300,42 +303,107 @@ a {
   overflow: hidden;
   background-color: #d9d4e7;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
-.cards-container .card-image {
+.cards-container .card-image-container {
+  width: 50%;
+  align-self: stretch;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+}
+.cards-container .card-image-container .card-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
 }
-.cards-container .card-title {
-  padding: 0.5rem;
-  font-size: 1rem;
+.cards-container .card-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+}
+.cards-container .card-info .card-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
   font-family: Roboto-Bold;
-  font-weight: bold;
-  text-transform: uppercase;
 }
-.cards-container .card-price {
-  align-self: flex-end;
-  margin-right: 3px;
-  font-family: Roboto-Light;
-  font-size: 1rem;
+.cards-container .card-info .card-price {
+  font-family: Roboto-Bold;
+  font-size: 1.3rem;
 }
-.cards-container .card-price .price {
-  text-decoration: underline;
-}
-.cards-container .card-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
+.cards-container .card-info .card-link {
+  width: 65%;
   background-color: #0e172c;
-  padding: 0.4rem;
-  margin: 4px;
-  margin-bottom: 30px;
-  text-align: center;
+  color: #fffffe;
+  padding: 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
   text-transform: uppercase;
+  text-align: center;
+}
+
+.form {
+  grid-row: 11;
+  grid-column: 2/12;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background-color: #d9d4e7;
+  padding: 1.2rem 0.75rem;
+  box-shadow: 8px 8px 16px rgba(14, 23, 44, 0.8);
+  position: relative;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-group:not(:first-of-type) {
+  margin-top: 1rem;
+}
+.form-group label {
+  width: 35%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: Roboto-Light;
+}
+.form-group input {
+  width: 60%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  text-transform: capitalize;
+  color: #0e172c;
+}
+.form-group input:focus {
+  outline: invert;
+  outline-color: #fec7d7;
+}
+.form button {
+  border: none;
+  outline: none;
+  margin-top: 1.3rem;
   width: 45%;
   align-self: center;
+  background-color: #0e172c;
+  color: #fffffe;
+  padding: 0.75rem;
+  text-transform: uppercase;
+}
+.form .errorMessage {
+  position: absolute;
+  background-color: #0e172c;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  color: #fec7d7;
+  border-radius: 4px;
+  transition: all 1s ease-in;
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
