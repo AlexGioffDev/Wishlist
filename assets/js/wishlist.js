@@ -40,7 +40,6 @@ const generateWish = () => {
 
     storage.push(productForStorage);
     localStorage.setItem("wishlist", JSON.stringify(storage));
-    console.log(JSON.parse(localStorage.getItem("wishlist")));
     loadCard();
     imageProduct.value = "";
     titleProduct.value = "";
