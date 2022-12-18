@@ -21,6 +21,11 @@ const generateWish = () => {
         || !priceProduct.checkValidity()
         || !linkPorduct.checkValidity()
         || !numbersProduct.checkValidity()) {
+            console.log(imageProduct.validationMessage)
+            console.log(titleProduct.validationMessage)
+            console.log(priceProduct.validationMessage)
+            console.log(linkPorduct.validationMessage)
+            console.log(numbersProduct.validationMessage)
         errorForm.style.display = "block";
         setTimeout(() => {
             errorForm.style.display = "none";
@@ -101,16 +106,29 @@ const generateCards = () => {
         cardNumbers.appendChild(valueNumbers);
         cardNumbers.appendChild(buttonPlus);
 
+        let cardButtons = document.createElement("div");
+        cardButtons.classList.add("card-buttons");
+
+        let deleteButton = document.createElement("button");
+        deleteButton.classList.add("card-delete")
+        deleteButton.innerText = "Delete";
+        deleteButton.onclick = deleteItem;
         let cardLink = document.createElement("a");
         cardLink.classList.add("card-link");
         cardLink.target = "_blank";
         cardLink.innerText = "Link";
         cardLink.href = wishlist.linkProduct;
 
+        cardButtons.appendChild(deleteButton);
+        cardButtons.appendChild(cardLink);
+
+        
+
         cardInfo.appendChild(cardTitle);
         cardInfo.appendChild(cardPrice);
         cardInfo.appendChild(cardNumbers);
-        cardInfo.appendChild(cardLink);
+        cardInfo.appendChild(cardButtons);
+        
 
         cardDiv.appendChild(cardInfo);
         cards.appendChild(cardDiv);
@@ -118,16 +136,44 @@ const generateCards = () => {
     })
 }
 
-const loadCard = () => {
-    cards.replaceChildren();
-
-    generateCards();
+const formPosition = () => {
     if(cards.childElementCount < 1){
         form.style.gridRow = 3;
     } else {
         form.style.gridRow = 11;
     }
+}
+
+const loadCard = () => {
+   cards.replaceChildren();
+
+    generateCards();
+    formPosition();
     calculateTotal();
+}
+
+const deleteItem = (event) => {
+   let children = Object.values(cards.children);
+   let wishItem = Object.values(JSON.parse(localStorage.getItem("wishlist")));
+   console.log(event.target.parentNode.parentNode.parentNode)
+   let index = 0;
+   children.forEach((child, idx) => {
+        if(child == event.target.parentNode.parentNode.parentNode)
+        {
+            index = idx
+            cards.removeChild(event.target.parentNode.parentNode.parentNode);
+        }
+   })
+
+   let newWishItem = wishItem.filter((wish, idx) => {
+        if(idx !== index){
+            return wish;
+        }
+   })
+
+
+   localStorage.setItem("wishlist", JSON.stringify(newWishItem));
+   loadCard();
 }
 
 const calculateTotal = () => {
@@ -191,6 +237,12 @@ const increment = (event) => {
     localStorage.setItem("wishlist", JSON.stringify(elementsArr));
     loadCard();
 
+}
+
+const clearAll = () => {
+    localStorage.setItem("wishlist", JSON.stringify([]));
+
+    loadCard();
 }
 
 loadCard();

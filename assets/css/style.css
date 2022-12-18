@@ -359,16 +359,6 @@ a {
   font-family: Roboto-Bold;
   font-size: 1.3rem;
 }
-.cards-container .card-info .card-link {
-  width: 65%;
-  background-color: #0e172c;
-  color: #fffffe;
-  padding: 0.9rem;
-  border-radius: 4px;
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-}
 .cards-container .card-info .card-numbers {
   width: 65%;
   display: flex;
@@ -393,6 +383,30 @@ a {
   color: #fffffe;
   cursor: pointer;
 }
+.cards-container .card-info .card-buttons {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cards-container .card-info .card-buttons .card-link {
+  background-color: #0e172c;
+  color: #fffffe;
+  padding: 0.9rem;
+  border-radius: 4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+.cards-container .card-info .card-buttons .card-delete {
+  border: none;
+  outline: none;
+  background-color: #0e172c;
+  color: #fec7d7;
+  padding: 0.7rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
 
 .form {
   grid-column: 2/12;
@@ -413,7 +427,7 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .form {
-    grid-column: 4/10;
+    grid-column: 4/9;
   }
 }
 .form-group {
@@ -467,8 +481,6 @@ a {
 }
 
 .total {
-  grid-row: 2;
-  grid-column: 2/12;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -476,7 +488,7 @@ a {
 }
 @media screen and (min-width: 1440px) {
   .total {
-    grid-column: 3/10;
+    grid-column: 4/9;
   }
 }
 .total-text, .total #total-price {
@@ -485,6 +497,30 @@ a {
   font-family: Roboto-Bold;
   letter-spacing: 1px;
   color: #0e172c;
+}
+
+.options {
+  grid-row: 2;
+  grid-column: 2/12;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.options button {
+  width: 44%;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  background-color: #d9d4e7;
+  color: #0e172c;
+  font-family: Roboto-Bold;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 8px rgba(14, 23, 44, 0.8);
+  transition: all 0.5s ease-in;
+}
+.options button:hover {
+  transition: all 0.5s ease-in;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=style.css.map */

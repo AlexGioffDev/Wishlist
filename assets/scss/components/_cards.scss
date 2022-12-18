@@ -79,16 +79,7 @@
                 font-size: 1.3rem;
             }
 
-            .card-link {
-                width: 65%;
-                background-color: $background-button;
-                color: $text-button;
-                padding: .9rem;
-                border-radius: 4px;
-                text-decoration: none;
-                text-transform: uppercase;
-                text-align: center;
-            }
+            
 
             .card-numbers{
                 width: 65%;
@@ -114,6 +105,32 @@
                     background-color: $background-button;
                     color: $text-button;
                     cursor: pointer;
+                }
+            }
+
+            .card-buttons {
+                width: 85%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .card-link {    
+                    background-color: $background-button;
+                    color: $text-button;
+                    padding: .9rem;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    text-align: center;
+                }
+
+                .card-delete {
+                    border: none;
+                    outline: none;
+                    background-color: $background-button;
+                    color: $base-color;
+                    padding: .7rem;
+                    border-radius: 4px;
+                    text-transform: uppercase;
                 }
             }
         }
