@@ -1,32 +1,62 @@
 .cards-container {
     grid-row: 3 / 10;
     grid-column: 1 / -1;
-    padding: 0 1.5rem;
+    padding: .65rem 1.5rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
     overflow: auto;
 
-    .card {
+    @media screen and (min-width: 768px) {
+        .card {
+            flex-basis: 45%;
+            height: 200px;
+            max-height: 200px;
+        }
 
+    }
+
+    @media screen and (min-width: 1024px) {
+        .card {
+            flex-basis: 30%;
+            max-height: 300px;
+            height: 300px;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        grid-column: 4 / 10;
+        gap: 30px;
+
+        .card {
+            flex-basis: 40%;
+            max-height: 800px;
+            height: 800px;
+        }
+    }
+
+    .card {
+        max-height: 175px;
         border-radius: 4px;
         box-shadow: 5px 3px 8px rgba(0, 0, 0, .8);
         overflow: hidden;
         background-color: $background-button-secondary;
         display: flex;
-        &-image-container{
+
+        &-image-container {
             width: 50%;
             align-self: stretch;
             position: relative;
             clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
 
-          
+
             .card-image {
+                object-fit: cover;
+                max-width: 100%;
+                max-height: 100%;
                 width: 100%;
                 height: 100%;
-                object-fit: contain;
             }
         }
 
@@ -37,6 +67,7 @@
             align-items: center;
             justify-content: space-evenly;
             padding: 0 1rem;
+
             .card-title {
                 font-size: 1.5rem;
                 text-transform: uppercase;
@@ -58,8 +89,35 @@
                 text-transform: uppercase;
                 text-align: center;
             }
+
+            .card-numbers{
+                width: 65%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+
+                &-value{
+                    font-size: 1.8rem;
+                    color: $headline-color;
+                    font-family: $font-family-bold;
+                }
+
+                &-button {
+                    border: none;
+                    outline: none;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $background-button;
+                    color: $text-button;
+                    cursor: pointer;
+                }
+            }
         }
 
-        
+
     }
 }

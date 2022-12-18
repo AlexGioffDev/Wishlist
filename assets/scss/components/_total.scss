@@ -1,0 +1,20 @@
+.total{
+    grid-row: 2;
+    grid-column: 2 / 12;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    @media screen and (min-width: 1440px) {
+        grid-column: 3 / 10;
+    }
+
+    &-text, #total-price {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-family: $font-family-bold;
+        letter-spacing: 1px;
+        color: $headline-color;
+    }
+}

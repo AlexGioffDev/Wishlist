@@ -1,5 +1,4 @@
 .form {
-    grid-row: 11;
     grid-column: 2 / 12;
     display:  flex;
     flex-direction: column;
@@ -10,6 +9,14 @@
     padding: 1.2rem .75rem;
     box-shadow: 8px 8px 16px rgba($color: $headline-color, $alpha: .8);
     position: relative;
+
+    @media screen and (min-width: 768px) {
+        grid-column: 3 / 11;
+    }
+
+    @media screen and (min-width: 1024px) {
+        grid-column: 4 / 10;
+    }
     &-group {
         display: flex;
         align-items: center;
