@@ -7,10 +7,12 @@
     text-align: justify;
     animation: bg-opacity 1.5s ease-in 0.2s 1 forwards;
     background-image: url('../images/hero-image.png');
+    opacity: 0;
 
     @media screen and (min-width: 425px) and (max-width: 767px) {
         animation: bg-fade-425 1.5s ease-in 0.2s 1 forwards;
     }
+
 
     
 
@@ -20,8 +22,8 @@
         font-family: $font-family-bold;
         font-size: 4rem;
         position: absolute;
-        left: 0;
-        top: 7.3rem;
+        left: 1rem;
+        top: 7rem;
         letter-spacing: -1px;
         opacity: 0;
         animation: leftToZero 2s ease-in 0.5s 1 forwards, fade-out 2s ease-in 0.5s 1 forwards;
@@ -96,7 +98,8 @@
     @media screen and (min-width: 768px)
     {
         grid-column: 2 / 12;
-
+        background-size: contain;
+        animation: bg-opacity-medium 1.5s ease-in 0.2s 1 forwards;
 
         &-headline, &-subtitle, &-btn {
             margin-left: 14%;
@@ -137,7 +140,7 @@
        &-btn {
         top: 21rem;
         font-size: 3rem;
-        margin-left: 10%;
+        margin-left: 10.5%;
        }
     }
 
@@ -186,9 +189,28 @@
     }
 
     100% {
-        background-position: 50% 50%;
+        background-position: 30% 50%;
+        opacity: 1;
     }
 }
+
+@keyframes bg-opacity-medium {
+    0% {
+        background: transparent
+    }
+
+    75% {
+        background-position: 60% 50%;
+
+    }
+
+    100% {
+        background-position: 60% 50%;
+        opacity: 1;
+    }
+}
+
+
 
 @keyframes bg-fade-425 {
     0% {
@@ -207,6 +229,6 @@
 
 
 
-@include from-left(leftToZero, 0);
-@include from-left(leftToFive, 5px);
-@include from-left(leftToTen, 10px);
+@include from-left(leftToZero, 10px);
+@include from-left(leftToFive, 15px);
+@include from-left(leftToTen, 15px);

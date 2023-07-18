@@ -9,8 +9,23 @@ let linkPorduct = document.getElementById("linkProduct");
 let numbersProduct = document.getElementById("numberProduct");
 let cards = document.getElementById("cards");
 
-if (!localStorage.getItem("wishlist")) {
-    localStorage.setItem("wishlist", JSON.stringify([]))
+if (!localStorage.getItem("wishlist") || localStorage.getItem("wishlist").length <= 0) {
+    localStorage.setItem("wishlist", JSON.stringify([
+        {
+            "imageProduct": "https://m.media-amazon.com/images/P/B0997XX2BW.01._SCLZZZZZZZ_SX500_.jpg",
+            "titleProduct": "Spiderman Comics",
+            "priceProduct": 19.00,
+            "linkProduct": "https://www.amazon.it/Potere-responsabilit%C3%A0-Ultimate-Spider-Man-Michael/dp/8828703083/ref=sr_1_3?__mk_it_IT=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=7XPWW26GHMFV&keywords=spiderman+number+1+comics&qid=1689673724&sprefix=spiderman+number+1+comic%2Caps%2C111&sr=8-3",
+            "numbersProduct": 1
+        },
+        {
+            "imageProduct": "https://m.media-amazon.com/images/I/71dpTXFz+dL._AC_SL1500_.jpg",
+            "titleProduct": "Iphone 13",
+            "priceProduct": 763.00,
+            "linkProduct": "https://www.amazon.it/Apple-iPhone-13-128GB-Azzurro/dp/B09G9DMQ7M/ref=sr_1_1_sspa?keywords=iphone+13&qid=1689673930&sprefix=iphone%2Caps%2C213&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+            "numbersProduct": 2
+        },
+    ]))
 }
 
 
@@ -83,7 +98,7 @@ const generateCards = () => {
 
         let cardPrice = document.createElement("h2");
         cardPrice.classList.add("card-price");
-        cardPrice.innerHTML = `Price - <span>${parseFloat(wishlist.priceProduct).toFixed(2)}</span>`
+        cardPrice.innerHTML = `Price: <span>${parseFloat(wishlist.priceProduct).toFixed(2)}</span>`
 
         let cardNumbers = document.createElement("div");
         cardNumbers.classList.add("card-numbers");

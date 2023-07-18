@@ -54,6 +54,8 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .header {
@@ -82,6 +84,7 @@ a {
   text-align: justify;
   animation: bg-opacity 1.5s ease-in 0.2s 1 forwards;
   background-image: url("../images/hero-image.png");
+  opacity: 0;
 }
 @media screen and (min-width: 425px) and (max-width: 767px) {
   .jumbotron {
@@ -94,8 +97,8 @@ a {
   font-family: Roboto-Bold;
   font-size: 4rem;
   position: absolute;
-  left: 0;
-  top: 7.3rem;
+  left: 1rem;
+  top: 7rem;
   letter-spacing: -1px;
   opacity: 0;
   animation: leftToZero 2s ease-in 0.5s 1 forwards, fade-out 2s ease-in 0.5s 1 forwards;
@@ -155,6 +158,8 @@ a {
 @media screen and (min-width: 768px) {
   .jumbotron {
     grid-column: 2/12;
+    background-size: contain;
+    animation: bg-opacity-medium 1.5s ease-in 0.2s 1 forwards;
   }
   .jumbotron-headline, .jumbotron-subtitle, .jumbotron-btn {
     margin-left: 14%;
@@ -189,7 +194,7 @@ a {
   .jumbotron-btn {
     top: 21rem;
     font-size: 3rem;
-    margin-left: 10%;
+    margin-left: 10.5%;
   }
 }
 @media screen and (min-width: 2560px) {
@@ -224,7 +229,20 @@ a {
     background-position: 60% 50%;
   }
   100% {
-    background-position: 50% 50%;
+    background-position: 30% 50%;
+    opacity: 1;
+  }
+}
+@keyframes bg-opacity-medium {
+  0% {
+    background: transparent;
+  }
+  75% {
+    background-position: 60% 50%;
+  }
+  100% {
+    background-position: 60% 50%;
+    opacity: 1;
   }
 }
 @keyframes bg-fade-425 {
@@ -243,10 +261,10 @@ a {
     left: -200rem;
   }
   75% {
-    left: 10px;
+    left: 20px;
   }
   100% {
-    left: 0;
+    left: 10px;
   }
 }
 @keyframes leftToFive {
@@ -254,10 +272,10 @@ a {
     left: -200rem;
   }
   75% {
-    left: 15px;
+    left: 25px;
   }
   100% {
-    left: 5px;
+    left: 15px;
   }
 }
 @keyframes leftToTen {
@@ -265,10 +283,10 @@ a {
     left: -200rem;
   }
   75% {
-    left: 20px;
+    left: 25px;
   }
   100% {
-    left: 10px;
+    left: 15px;
   }
 }
 .title-container {
@@ -295,12 +313,18 @@ a {
   align-items: center;
   gap: 10px;
   overflow: auto;
+  width: 100%;
+  height: 100%;
 }
 @media screen and (min-width: 768px) {
+  .cards-container {
+    grid-column: 2/-1;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
   .cards-container .card {
+    justify-content: center;
     flex-basis: 45%;
-    height: 200px;
-    max-height: 200px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -311,12 +335,8 @@ a {
   }
 }
 @media screen and (min-width: 1440px) {
-  .cards-container {
-    grid-column: 4/10;
-    gap: 30px;
-  }
   .cards-container .card {
-    flex-basis: 40%;
+    flex-basis: 50%;
     max-height: 800px;
     height: 800px;
   }
